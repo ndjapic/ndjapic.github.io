@@ -1,3 +1,1 @@
-# ndjapic.github.io
-# ndjapic.github.io
-# ndjapic.github.io
+# http://ndjapic.github.io/
