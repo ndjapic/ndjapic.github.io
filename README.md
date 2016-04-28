@@ -1,3 +1,1 @@
-# Homepage
-
-[Homepage](http://ndjapic.github.io/)
+# [Homepage](http://ndjapic.github.io/)
