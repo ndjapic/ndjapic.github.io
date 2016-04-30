@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Content-Script-Type" content="text/javascript">
+<title>Decimal Periodic Numbers</title>
+
+<script type="text/javascript">
+<!--
+function nzd(a,b){
+ if(b==0) return a
+ return nzd(b,a%b)
+}
+function start(inp){
+ var f = inp.form
+ if(inp==f.inp || inp==f.dec || inp==f.rep){
+  var val = inp.value
+  var str = ""
+  for(var i = 0; i<val.length; i++){
+   if(val.charAt(i)<"0" || val.charAt(i)>"9"){
+//    alert("Please use digits only.")
+    inp.value = str
+    inp.focus()
+    return false
+   }
+   str += val.charAt(i)
+  }
+ }
+ var n = Number(f.int.value)
+ var a =
+  Number(f.dec.value+f.rep.value) -
+  Number(f.dec.value) ||
+  Number(f.dec.value)
+ var b =
+  Math.pow(10, (f.dec.value+f.rep.value).length) -
+  Math.pow(10, f.dec.value.length) ||
+  Math.pow(10, f.dec.value.length)
+ var d = nzd(b,a)
+ a = a/d
+ b = b/d
+ f.res.value = n
+ f.num.value = a
+ f.den.value = b
+ f.x.value = n + (n<0 ? -1 : 1) * a/b
+ var col = f.getElementsByTagName("input")
+ for(var i = 0; i<col.length; i++){
+  var t = col.item(i)
+  t.size = t.value.length || 1
+ }
+}
+// -->
+</script></head><body>
+<h1>Decimal Periodic Numbers</h1>
+<form>
+<p>Enter three parts of decimal periodic number:</p>
+<ol>
+<li>Integer part,</li>
+<li>Decimal part up to repeating part, and</li>
+<li>Decimal periodic part.</li>
+</ol>
+<p>
+ <input size="1" name="int" value="0" onkeyup="start(this)" onchange="start(this)" type="text">.<input size="1" name="dec" value="" onkeyup="start(this)" onchange="start(this)" type="text"><input size="1" name="rep" value="142857" onkeyup="start(this)" onchange="start(this)" type="text">
+  <input size="9" value="Calculate" onclick="start(this)" type="button">
+  <input size="1" type="reset">
+</p>
+<p>Resulting fraction consist of:</p>
+<ol>
+<li>Integer part <input size="1" name="res" readonly="readonly" type="text">,</li>
+<li>Numerator <input size="1" name="num" readonly="readonly" type="text">, and</li>
+<li>Denominator <input size="1" name="den" readonly="readonly" type="text">.</li>
+</ol>
+<p>Decimal number was approximately
+ <input size="19" name="x" readonly="readonly" type="text">.</p>
+</form>
+
+</body></html>
