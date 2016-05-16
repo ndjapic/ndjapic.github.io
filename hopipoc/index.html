@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>Слајдови</h1>
+  <img id="slika" src="" />
+  <script>
+window.onload = function(){
+  var i = 0;
+  niz = [
+    "https://s3.amazonaws.com/one_org_international/international/wp-content/uploads/2013/08/one-logo-og-image.jpg",
+    "http://digimind.com/blog/wp-content/uploads/2012/02/number2c.png",
+    "http://www.three.com/assets/images/three-logo.png"
+  ];
+  var slika = document.getElementById("slika");
+  var posao = setInterval(function(){
+    slika.src = niz[i];
+    i = (i+1) % niz.length;
+  }, 9000);
+};
+  </script>
+</body>
+</html>
