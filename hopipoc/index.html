@@ -12,16 +12,18 @@
   <script>
 window.onload = function(){
   var i = 0;
-  niz = [
+  var niz = [
     "https://s3.amazonaws.com/one_org_international/international/wp-content/uploads/2013/08/one-logo-og-image.jpg",
     "http://digimind.com/blog/wp-content/uploads/2012/02/number2c.png",
     "http://www.three.com/assets/images/three-logo.png"
   ];
   var slika = document.getElementById("slika");
-  var posao = setInterval(function(){
-    slika.src = niz[i];
-    i = (i+1) % niz.length;
-  }, 5000);
+  var posao = setInterval(
+    function(){
+      slika.src = niz[i];
+      i = (i+1) % niz.length;
+    }, 5000
+  );
 };
   </script>
 </body>
