@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Аритметичка средина</title>
+</head>
+<body>
+  <h1>Аритметичка средина</h1>
+
+<form>
+<p><input type="reset" /> <input type="submit" /></p>
+
+<table>
+	<tbody>
+		<tr>
+			<th scope="row">број петица</th>
+			<td><input type="number" min="0" /></td>
+		</tr>
+		<tr>
+			<th scope="row">број четворки</th>
+			<td><input type="number" min="0" /></td>
+		</tr>
+		<tr>
+			<th scope="row">број тројки</th>
+			<td><input type="number" min="0" /></td>
+		</tr>
+		<tr>
+			<th scope="row">број двојки</th>
+			<td><input type="number" min="0" /></td>
+		</tr>
+		<tr>
+			<th scope="row">број јединица</th>
+			<td><input type="number" min="0" /></td>
+		</tr>
+		<tr>
+			<th scope="row">збир оцена</th>
+			<td><input type="text" /></td>
+		</tr>
+		<tr>
+			<th scope="row">број оцена</th>
+			<td><input type="text" /></td>
+		</tr>
+		<tr>
+			<th scope="row">просек</th>
+			<td><input type="text" /></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+
+<script>
+window.onload = function(){
+  var frm = document.forms[0];
+  var els = frm.elements;
+  frm.onsubmit = function(){
+    var broj = 0, zbir = 0, br;
+    for(var i = 2; i < 7; i++){
+      br = Number(els[i].value);
+      broj += br;
+      zbir += br * (7-i);
+    }
+    els[7].value = zbir;
+    els[8].value = broj;
+    els[9].value = zbir / broj;
+    return false;
+  };
+};
+</script>
+</body>
+</html>
