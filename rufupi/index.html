@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by ndjapic (http://jsbin.com/rufupi/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <title>Провере знања</title>
+</head>
+<body>
+
+<script>
+window.onload = function(){
+  var html = [], provera = provere[0], value, rows, cells, i, j, k, newline = "<br />\n";
+  for(var name in provera){
+    value = provera[name];
+    if(name === "теме"){
+      value = value.join("," + newline);
+    }else if(name === "задаци"){
+      newValue = [""];
+      for(i in value){
+        newValue.push(i + ". " + value[i]);
+      }
+      value = newValue.join(newline);
+    }else if(name === "одељења"){
+      rows = [];
+      cells = [" " + tag("th", "одељење", false)];
+      for(k in value["1"][0]){
+        cells.push(tag("th", k, false));
+      }
+      rows.push(tag("tr", cells.join(""), false));
+      for(i in value){
+        for(j in value[i]){
+          cells = [" " + tag("td", i, false)];
+          for(k in value[i][j]){
+            cells.push(tag("td", value[i][j][k], false));
+          }
+          rows.push(tag("tr", cells.join(""), false));
+        }
+      }
+      value = tag("table", rows.join("\n"), "border = 1 cellspacing = '0'");
+    }else{
+    }
+    html.push(name + ": " + value);
+  }
+  document.body.innerHTML = html.join(newline);
+};
+
+function tag(name, content, options){
+  return "<" + name + (options ? " " + options : "") + (content ? ">" + content + "</" + name : " /") + ">";
+}
+
+var provere = [
+  {
+    "разред": 6,
+    "датум": "2016-09-25",
+    "врста": "контролни задатак",
+    "теме": [
+      "Цели бројеви (сабирање и одузимање)"
+    ],
+    "задаци": {
+      1: "Израчунај...",
+      2: "Провери...",
+      3: "Докажи...",
+      4: "Конструиши...",
+      5: "Упореди...",
+      6: "Да ли...?",
+      7: "Нацртај..."
+    },
+    "одељења": {
+      1: [
+        {"буд": "01", "група": "1", "бодови": "342 543", "ученик": "Презиме Име"},
+        {"буд": "01", "група": "2", "бодови": "34 2543", "ученик": "Презиме Име"},
+        {"буд": "01", "група": "1", "бодови": "3 42543", "ученик": "Презиме Име"}
+      ],
+      2: [
+        {"буд": "01", "група": "1", "бодови": "34254 3", "ученик": "Презиме Име"},
+        {"буд": "01", "група": "2", "бодови": "3425 43", "ученик": "Презиме Име"},
+        {"буд": "01", "група": "2", "бодови": "342 543", "ученик": "Презиме Име"}
+      ]
+    }
+  }
+];
+</script>
+</body>
+</html>
