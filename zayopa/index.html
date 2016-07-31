@@ -9,27 +9,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-<style id="jsbin-css">
-body {
-  font-family: sans;
-  background-color: black;
-  color: white;
-}
-h1,h2,h3,h4 {
-  color: yellow;
-  background-color: maroon;
-  cursor: pointer;
-  border: solid maroon 1pt;
-}
-h1,h2,h3 {
-  text-align: center;
-}
-h2:hover, h3:hover, h4:hover {
-  border: solid yellow 1pt;
-}
-a:visited {color: pink;}
-a {color: yellow;}
-</style>
+  <LINK REL="STYLESHEET" HREF="/style/dark.css">
+  <LINK REL="STYLESHEET ALTERNATE" HREF="/style/big.css" TITLE="Big Text">
 </head>
 <body lang="sr-RS" dir="ltr">
 
@@ -1281,32 +1262,6 @@ a {color: yellow;}
   </p>
 </footer>
 
-<script>
-window.onload = function(){
-  var node;
-  function eventFire(el, etype){
-    if (el.fireEvent) {
-      el.fireEvent('on' + etype);
-    } else {
-      var evObj = document.createEvent('Events');
-      evObj.initEvent(etype, true, false);
-      el.dispatchEvent(evObj);
-    }
-  }
-  function handler(evt) {
-    evt = evt || window.event;
-    var targ = evt.target || evt.srcElement;
-    if (targ.nodeType == 3) targ = targ.parentNode; // defeat Safari bug
-    var sty = targ.nextSibling.style;
-    sty.display = (sty.display != 'none') ? 'none' : 'block';
-  }
-  var ols = document.getElementsByTagName('ol');
-  for(var rbr = 0; rbr < ols.length; rbr++){
-    node = ols[rbr].previousSibling;
-    node.onclick = handler;
-    eventFire(node, 'click');
-  }
-};
-</script>
+<script src="/js/hide-content.js"></script>
 </body>
 </html>
