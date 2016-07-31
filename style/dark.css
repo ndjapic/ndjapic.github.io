@@ -1,0 +1,19 @@
+body {
+  font-family: sans;
+  background-color: black;
+  color: white;
+}
+h1,h2,h3,h4 {
+  color: yellow;
+  background-color: maroon;
+  cursor: pointer;
+  border: solid maroon 1pt;
+}
+h1,h2,h3 {
+  text-align: center;
+}
+h2:hover, h3:hover, h4:hover {
+  border: solid yellow 1pt;
+}
+a:visited {color: pink;}
+a {color: yellow;}
