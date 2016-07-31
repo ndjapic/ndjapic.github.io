@@ -12,6 +12,9 @@ h1,h2,h3,h4 {
 h1,h2,h3 {
   text-align: center;
 }
+p {
+  text-align: justify;
+}
 h2:hover, h3:hover, h4:hover {
   border: solid yellow 1pt;
 }
