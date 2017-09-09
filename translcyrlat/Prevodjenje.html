@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Prevodjenje cirilice u latinicu i obrnuto</title>
+</head>
+<script type="text/javascript">
+ var znaci = {
+  c: 'АБВГДЂЕЖЗИЈКЛМНОПРСТЋУФХЦЧШабвгдђежзијклмнопрстћуфхцчш',
+  l: 'ABVGDĐEŽZIJKLMNOPRSTĆUFHCČŠabvgdđežzijklmnoprstćufhcčš'
+ }
+ var dvoznaci = {
+  c: 'ЉЊЏЉЊЏљњџ',
+  l: 'LjNjDžLJNJDŽljnjdž'
+ }
+ function lat2cyr(s){
+  with(dvoznaci)
+   for(var i=0;i<c.length;i++)
+    s = s.split(l.charAt(2*i)+l.charAt(2*i+1)).join(c.charAt(i))
+  with(znaci)
+   for(var i=0;i<c.length;i++)
+    s = s.split(l.charAt(i)).join(c.charAt(i))
+  return s
+ }
+ function cyr2lat(s){
+  with(dvoznaci)
+   for(var i=0;i<c.length;i++)
+    s = s.split(c.charAt(i)).join(l.charAt(2*i)+l.charAt(2*i+1))
+  with(znaci)
+   for(var i=0;i<c.length;i++)
+    s = s.split(c.charAt(i)).join(l.charAt(i))
+  return s
+ }
+</script>
+<style type="text/css">
+ body {background-color: #ead;}
+ h1,td {text-align: center; background-color: #af6;}
+ caption {background-color: #e5f;}
+</style>
+<body>
+
+<h1>Превођење ћирилице у латиницу и обрнуто</h1>
+
+<form>
+<table border="0" style="width: 100%">
+  <caption>Да би се појавио превод кликните на жељено дугме</caption>
+  <tbody>
+    <tr align="center">
+      <td>
+<input type="button" value="Ћирилица" onclick="
+ this.form.cyr.value = lat2cyr(this.form.lat.value)
+" />
+<br /><textarea name="cyr" rows="10" cols="40"></textarea>
+      </td>
+      <td>
+<input type="button" value="Latinica" onclick="
+ this.form.lat.value = cyr2lat(this.form.cyr.value)
+" />
+<br /><textarea name="lat" rows="10" cols="40"></textarea>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+
+</body>
+</html>
