@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <title>Ератостеново сито</title>
+  <script type="text/javascript">
+function brisanje(t){
+ if(t!=''){
+  var r = Number(t)
+  for(var i=2; r*i<n*n; i++){
+   document.formular.elements[r*i].value=''
+  }
+ }
+}
+  </script>
+  <style type="text/css">
+   table {width: 100%;}
+   td {text-align: center;}
+  </style>
+</head><body>
+
+<h1>Ератостеново сито</h1>
+
+<form name="formular">
+<table>
+<tbody>
+<script type="text/javascript">
+var n = Number(prompt('Унесите број редова:', '24'))
+for(var i=0; i<n; i++){
+ document.writeln('<tr>')
+ for(var j=0; j<n; j++){
+  document.writeln('<td><input onclick="brisanje(this.value)" type="button" /></td>')
+ }
+ document.writeln('</tr>')
+}
+for(var i=2; i<n*n; i++){
+ document.formular.elements[i].value=i+''
+}
+</script>
+</tbody>
+</table>
+</form>
+
+<p>Класична игрица из Старог века.
+ Кликните редом на све бројеве у првом реду.
+ Објасните зашто после тога кликтање било где више не проузрокује брисање.</p>
+
+</body></html>
