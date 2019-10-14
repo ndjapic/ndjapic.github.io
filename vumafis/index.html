@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by ndjapic (http://jsbin.com/vumafis/23/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <base target="_blank">
+  <title>Информатика</title>
+</head>
+<body>
+  <h1>Скреч пројекти</h1>
+
+  <ol></ol>
+
+  <h1>Дабар</h1>
+
+  <ol>
+    <li>Zadaci i rešenja za učenike starijih razreda osnovne škole –
+      <a href='https://dabar.edu.rs/resenja-visi-razredi-osnovnih-skola/'>
+      školsko takmičenje (novembar, 2017.)</a></li>
+  </ol>
+
+  <h1>Микробит</h1>
+
+  <ol>
+    <li>Microsoft
+      <a href='https://makecode.microbit.org/#editor'>
+        MakeCode</a> for micro:bit</li>
+    <li>Примери микробит пројеката:
+      <a href='https://output.jsbin.com/lijirof/quiet'>
+        Сабирање разломака</a> |
+      <a href='https://makecode.microbit.org/_6WeY2h1avAH3'>
+        Штоперица</a></li> |
+      <a href='https://makecode.microbit.org/_dLc2bpeoy3Lc'>
+        Анкета сервер</a></li>
+    <li>
+      <a href='https://docs.google.com/forms/d/e/1FAIpQLScyxRNlFWKZNioLXJ9rtDzMPTH2xQJBnPWl7rWIefR9iE7sIw/viewform'>
+        Упитник о навикама у исхрани</a></li>
+  </ol>
+
+  <h1>Кодирање</h1>
+
+  <ol>
+    <li>
+      <a href='https://repl.it/languages/python3'>
+        Online Python compiler</a>
+      <ul>
+        <li><a href='https://repl.it/languages/pygame'>
+          Online Pygame REPL</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href='https://repl.it/@NenadDapic'>
+        Неке repl апликације</a></li>
+    <li>
+      <a href='https://www.tutorialspoint.com/execute_python3_online.php'>
+        Execute Python-3 Online (Python v3.6.2)</a></li>
+  </ol>
+
+  <pre><code>
+a = int(input('Унесите време једног такмичара: '))
+b = int(input('Унесите време другог такмичара: '))
+if(a &lt; b):
+  print('Победничко време је {}.'.format(a))
+else:
+  print('Победничко време је {}.'.format(b))
+  </code></pre>
+
+<h2>petlja.org</h2>
+
+<ul>
+	<li><a href="https://petlja.org/skola/osnovna/peti">пети</a> разред
+    | <a href="https://petlja.org/biblioteka/r/kursevi/scratch-supporthttps://petlja.org/biblioteka/r/kursevi/scratch-support">приручник</a>
+    | <a href="https://petlja.org/biblioteka/r/kursevi/scratch-zbirka">практикум</a>
+    | <a href="https://petlja.org/skola/osnovna/programiraj-v">материјали</a></li>
+	<li><a href="https://petlja.org/skola/osnovna/sesti">шести</a> разред
+    | <a href="https://petlja.org/biblioteka/r/kursevi/prirucnik-python">приручник</a>
+    | <a href="https://petlja.org/biblioteka/r/kursevi/python-zbirka-pitanja">питања</a>
+    | <a href="https://petlja.org/biblioteka/r/kursevi/ZbirkaVIRazred">задаци</a></li>
+	<li><a href="https://petlja.org/skola/osnovna/sedmi">седми</a> разред
+    | <a href="https://petlja.org/biblioteka/r/kursevi/pygame-prirucnik">приручник</a>
+    | <a href="https://petlja.org/biblioteka/r/kursevi/python-zbirka-pitanja">питања</a></li>
+</ul>
+
+<script>
+function createLi(number, name){
+  console.log(name);
+  var li = document.createElement('li');
+
+  var a = document.createElement('a');
+  a.setAttribute('href', ['https://scratch.mit.edu/projects/', number, '/'].join(''));
+  a.appendChild(document.createTextNode('страна'));
+  li.appendChild(a);
+  li.appendChild(document.createTextNode(' | '));
+
+  a = document.createElement('a');
+  a.setAttribute('href', ['https://scratch.mit.edu/projects/', number, '/#editor'].join(''));
+  a.appendChild(document.createTextNode('изнутра'));
+  li.appendChild(a);
+  li.appendChild(document.createTextNode(' | '));
+
+  li.appendChild(document.createTextNode(name));
+  return li;
+}
+
+window.onload = function(){
+  var olist = document.getElementsByTagName('ol')[0];
+  olist.appendChild(createLi('254208490', '3n+1 проблем'));
+  olist.appendChild(createLi('245232451', 'Израчунавање цифара природног броја'));
+  olist.appendChild(createLi('245238163', 'Поступак поређења два природна броја'));
+  olist.appendChild(createLi('247649977', 'Дељивост делиоцима броја 10'));
+  olist.appendChild(createLi('248300394', 'Дељивост делиоцима броја 100'));
+  olist.appendChild(createLi('248301277', 'Дељивост делиоцима броја 9'));
+  olist.appendChild(createLi('247908211', 'Ал Хорезмов поступак множења'));
+  olist.appendChild(createLi('247886841', 'Ал Хорезмов поступак дељења'));
+  olist.appendChild(createLi('190401219', 'НЗД и НЗС'));
+  olist.appendChild(createLi('64163886', 'Већи од два броја'));
+  olist.appendChild(createLi('91398222', 'Растављање на просте чиниоце'));
+  olist.appendChild(createLi('63232', 'PrimeNumbers'));
+  olist.appendChild(createLi('77303958', 'Прост или сложен'));
+  olist.appendChild(createLi('2332302', 'Euclid gcd'));
+  olist.appendChild(createLi('111418563', 'Низови'));
+  olist.appendChild(createLi('280856595', 'Поређење разломака'));
+  olist.appendChild(createLi('300675122', 'Сабирање разломака'));
+};
+</script>
+</body>
+</html>
