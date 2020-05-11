@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width">
+    <title>Збирка задатака, страница 179, задатак 120. (г)</title>
+    <base target="_blank">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <script type="text/javascript">
+      var job;
+      function update(){
+        if(job){clearTimeout(job);}
+        job = setTimeout(
+          function(){
+            var datetime = "<p>Време синхронизације: " + new Date().toLocaleString() + "</p>";
+            var tarea = document.getElementsByTagName('textarea')[0];
+            document.getElementById('main').innerHTML = tarea.value + datetime;
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            MathJax.Hub.Queue(function(){tarea.focus();});            
+          },
+          4000
+        );
+      }
+    </script>
+  
+<style id="jsbin-css">
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  text-align: justify;
+  color: white;
+  background-color: black;
+}
+div#main {
+  font-size: 140%;
+}
+h1,h2,h3 {
+  text-align: center;
+  color: yellow;
+  background-color: maroon;
+}
+textarea {
+  position: fixed;
+  bottom: 0.5ex;
+  right: 0.5ex;
+  opacity: 0.2;
+}
+textarea:hover {
+  opacity: 0.8;
+}
+
+</style>
+</head>
+  <body onload="update();">
+    <div id="main" width="100%"></div>
+    <textarea rows="5" cols="64" onkeyup="update();">
+<h1>Упутство</h1>
+<details open><summary>Збирка задатака, страница 179, задатак 120. (г)</summary>
+<p>Користимо особине операције дељења. Када дељеник повећамо неколико пута, количник се повећа исто толико пута.
+На основу тога закључујемо да је $(a \cdot \frac 59) : b = (a : b) \cdot \frac 59$.
+Када делицац смањимо неколико пута, количник се исти број пута повећа.
+\begin{align}
+ \left( a \cdot \frac 59 \right) : \left( b : 1 \frac 59 \right)
+ &= \left( \left( a : b \right) \cdot \frac 59 \right) \cdot 1 \frac 45
+ \\ &= \left( a : b \right) \cdot \left( \frac 59 \cdot 1 \frac 45 \right)
+\end{align}
+У последњем реду коришћена је асоцијативност множења.
+Преостаје да израчунаш производ $\frac 59 \cdot 1 \frac 45$ и наведеш закључак.
+</p>
+</details>
+    </textarea>
+    <a href="https://github.com/ndjapic/ndjapic.github.io/edit/master/mat5/Razlomci/Mnozenje/Zadatak119v.html">Измена кода ове странице</a>
+  </body>
+</html>
