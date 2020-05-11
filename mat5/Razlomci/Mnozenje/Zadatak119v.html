@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width">
+    <title>MathJax едитор</title>
+    <base target="_blank">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <script type="text/javascript">
+      var job;
+      function update(){
+        if(job){clearTimeout(job);}
+        job = setTimeout(
+          function(){
+            var datetime = "<p>Време синхронизације: " + new Date().toLocaleString() + "</p>";
+            var tarea = document.getElementsByTagName('textarea')[0];
+            document.getElementById('main').innerHTML = tarea.value + datetime;
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            MathJax.Hub.Queue(function(){tarea.focus();});            
+          },
+          4000
+        );
+      }
+    </script>
+  
+<style id="jsbin-css">
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  text-align: justify;
+  color: white;
+  background-color: black;
+}
+div#main {
+  font-size: 140%;
+}
+h1,h2,h3 {
+  text-align: center;
+  color: yellow;
+  background-color: maroon;
+}
+textarea {
+  position: fixed;
+  bottom: 0.5ex;
+  right: 0.5ex;
+  opacity: 0.2;
+}
+textarea:hover {
+  opacity: 0.8;
+}
+
+</style>
+</head>
+  <body onload="update();">
+    <div id="main" width="100%"></div>
+    <textarea rows="5" cols="64" onkeyup="update();">
+<h1>Упутства</h1>
+<details open><summary>119.(в)</summary>
+<p>Уочимо производ $a \cdot b = c$. Ако се чинилац помножи са $\frac 12$, производ се помножи са $\frac 12$. То закључујемо на основу комутативности и асоцијативности множења на следећи начин.
+\begin{align}
+ \left( a \cdot \frac 12 \right) \cdot b
+ &= a \cdot \left( \frac 12 \cdot b \right)
+ \\ &= a \cdot \left( b \cdot \frac 12 \right)
+ \\ &= \left( a \cdot b \right) \cdot \frac 12
+\end{align}
+Видимо да су чиниоци $b$ и $\frac 12$ заменили места, иако су се заграде вратиле где су биле на почетку.
+</p>
+<p>Слично буде и када се други чинилац множи.
+\begin{align}
+ \left( a \cdot \frac 12 \right) \cdot \left( b \cdot 2 \right)
+ &= \left( \left( a \cdot \frac 12 \right) \cdot b \right) \cdot 2
+ \\ &= \left( \left( a \cdot b \right) \cdot \frac 12 \right) \cdot 2
+ \\ &= \left( a \cdot b \right) \cdot \left( \frac 12 \cdot 2 \right)
+\end{align}
+Преостаје још да израчунаш производ $\frac 12 \cdot 2$ и наведеш закључак.
+</p>
+</details>
+    </textarea>
+    <a href="">Измена кода ове странице</a>
+  </body>
+</html>
