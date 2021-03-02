@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width" />
+    <title>MathJax едитор</title>
+    <base target="_blank">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <script type="text/javascript">
+      var job;
+      function update(){
+        if(job){clearTimeout(job);}
+        job = setTimeout(
+          function(){
+            var datetime = "<p>Време синхронизације: " + new Date().toLocaleString() + "</p>";
+            var tarea = document.getElementsByTagName('textarea')[0];
+            document.getElementById('main').innerHTML = tarea.value + datetime;
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            MathJax.Hub.Queue(function(){tarea.focus();});            
+          },
+          5000
+        );
+      }
+    </script>
+  
+<style id="jsbin-css">
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  text-align: justify;
+  color: white;
+  background-color: black;
+}
+div#main {
+  font-size: 140%;
+}
+h1,h2,h3 {
+  text-align: center;
+  color: yellow;
+  background-color: maroon;
+}
+textarea {
+  position: fixed;
+  bottom: 0.5ex;
+  right: 0.5ex;
+  opacity: 0.2;
+}
+textarea:hover {
+  opacity: 0.8;
+}
+
+</style>
+</head>
+  <body onload="update();">
+    <div id="main" width="100%"></div>
+    <textarea rows="5" cols="64" onkeyup="update();">
+
+<h1>Нула функције</h1>
+<details open><summary>Детаљније</summary>
+<p>4. Провери да ли је $x = 2$ нула функције:
+<ul>
+<li>а) у = х – 2;</li>
+<li>б) у = 2х + 1;</li>
+<li>в) у = –2х + 4;</li>
+<li>г) у = – 1 х + 1;</li>
+<li>д) 5х – у – 6 = 0;</li>
+<li>ђ) –3х + у + 6 = 0.</li>
+</ul>
+</p>
+<p> (д) Уврстимо и проверимо:
+\begin{align}
+ 5x-y-6&=0
+\\ 5 \cdot 2 - 0 - 6 &= 0
+\\ 10 - 6 &= 0
+\\ 4 &= 0
+\end{align}
+Једнакост није тачна. Закључујемо да $x=2$ није нула функције.
+</p>
+</details>
+
+<h1>Нула функције</h1>
+<details open><summary>Детаљније</summary>
+<p>3. Одреди координате тачке пресека х-осе
+и графика функције:
+<ul>
+<li>а) у = х + 5;</li>
+<li>б) у = –2х + 3;</li>
+<li>в) у = 2х + 3;</li>
+<li>г) у = –5х + 10.</li>
+</ul>
+</p>
+<p> (г)
+\begin{align}
+ y&=-5x+10=0
+\\ -5x&=0-10
+\\ x&=\frac{-10}{-5}=2
+\end{align}
+Тражена тачка пресека је $(x,y)=(2,0)$.
+</p>
+</details>
+
+<h1>Имплицитни облик линеарне функције</h1>
+<details open><summary>Детаљније</summary>
+<p>У формули за линеарну функцију
+\begin{align}
+ y&=kx+n
+\end{align}
+коефицијент $n$ зовемо одсечак на $y$ оси. Коефицијент $k$ зовемо нагиб или коефицијент правца.
+</p>
+</details>
+
+<h1>Појам линеарне функције</h1>
+<details open><summary>Детаљније</summary>
+<p>
+\begin{align}
+ 3 \cdot 5 &= 15
+\\ 3 \cdot 6 &= 18
+\end{align}
+Ако се независно применљива $x$ повећа за 1,
+онда се зависно променљива $y$ промени за $a$.
+Зато се коефицијент $a$ назива брзина промене или
+нагиб графика линеарне функције.
+</p>
+</details>
+
+<h1>Линеарна функција</h1>
+<details open><summary>Детаљније</summary>
+<p>
+\begin{align}
+ y&=ax+b, \quad a, b \in \mathbb{R}
+\end{align}
+Нула функције је вредност променљиве $x$ за коју је $y=0$.
+Променљиву $x$ зовемо независно променљива,
+а $y$ је зависно променљива.
+</p>
+</details>
+
+<h1>Квадар</h1>
+<details open><summary>Детаљније</summary>
+<p>
+Збир дужина три различите ивице квадра је 19cm,
+а дужина дијагонале је 13cm. Израчунај површину квадра.
+</p>
+</details>
+
+<h1>Допунска настава</h1>
+<details open><summary>Детаљније</summary>
+<p>
+\begin{align}
+ (x+1)^2 - x (x-3)&\geqslant 0
+\\ (a+b)^2 &= a^2 + 2ab + b^2
+\\ (x+1)^2 &= x^2 + 2x + 1
+\\ x^2 + 2x + 1 - x^2 + 3x &\geqslant 0
+\\ 2x + 1 + 3x &\geqslant 0
+\\ 2x + 3x &\geqslant 0-1
+\\ 5x &\geqslant -1
+\\ \frac{5x}5 &\geqslant \frac{-1}5
+\\ x &\geqslant -\frac 15
+\end{align}
+</p>
+</details>
+
+<h1>Школски рад</h1>
+<details open><summary>Детаљније</summary>
+<p>За праву која продире кроз раван кажемо да је нормална на раван ако је нормална на сваку праву те равни која пролази кроз тачку продора.</p>
+<p>За тачке кажемо да су копланарне ако припадају једној равни.</p>
+</details>
+
+<h1>Школски рад</h1>
+<h1>Однос тачке, праве и равни</h1>
+<details open><summary>
+Однос тачке $A$ и праве $p$ може да буде:</summary>
+<p>
+<ol>
+<li>тачка припрада правој, $A \in p$,</li>
+<li>тачка не припрада правој, $A \notin p$.</li>
+</ol>
+</p>
+</details>
+<details open><summary>
+Однос тачке $A$ и равни $\alpha$ може да буде:</summary>
+<p>
+<ol>
+<li>тачка припрада равни, $A \in \alpha$,</li>
+<li>тачка не припрада равни, $A \notin \alpha$.</li>
+</ol>
+</p>
+</details>
+<details open><summary>
+Однос праве $p$ и равни $\alpha$ може да буде:</summary>
+<p>
+<ol>
+<li>права је паралелна са равни, $p \parallel \alpha$,</li>
+ <ul>
+ <li>права је подскуп равни, $p \subset \alpha$,</li>
+ </ul>
+<li>права продире кроз раван, $p \cap \alpha = \{ A \}$.</li>
+ <ul>
+ <li>права је нормална на раван, $p \perp \alpha$,</li>
+ </ul>
+</ol>
+</p>
+</details>
+<details open><summary>
+Однос две праве $p$ и $q$ може да буде:</summary>
+<p>
+<ol>
+<li>секу се, $p \cap q = \{ A \}$</li>
+ <ul>
+ <li>нормалне су, $p \perp q$,</li>
+ </ul>
+<li>паралелне су, $p \parallel q$,</li>
+<li>мимоилазне су, $p \cap q = \{ \} = \varnothing \land p \not\parallel q$.</li>
+</ol>
+</p>
+</details>
+<details open><summary>
+Однос две равни $\alpha$ и $\beta$ може да буде:</summary>
+<p>
+<ol>
+<li>секу се, $\alpha \cap \beta = p$,</li>
+ <ul>
+ <li>нормалне су, $\alpha \perp \beta$,</li>
+ </ul>
+<li>паралелне су, $\alpha \parallel \beta$.</li>
+</ol>
+</p>
+</details>
+
+<h1>Површина и запремина ваљка</h1>
+
+<h1>Примена система једначина</h1>
+
+<h1>Примена система једначина<br>(на проблеме из геометрије)
+
+<h1>Примена система једначина<br>(проблем кретања)</h1>
+
+<h1>Примена система линеарних једначина у решавању проблема</h1>
+
+<h1>ЗАВРШНИ ИСПИТ НА КРАЈУ ОСНОВНОГ ОБРАЗОВАЊА И ВАСПИТАЊА</h1>
+<h2>школска 2016/2017. година</h2>
+<details open><summary>17. Израчунај вредност израза.</summary>
+\begin{align}
+& \frac{\sqrt{0,\!4 \cdot 1,\!6} + \sqrt{5,\!76 : 4}}{\frac 25}
+ -5 \cdot \left(
+  \sqrt{\left( 1 + \frac 79 \right)^2} -
+  \sqrt{\left( 1 - \frac 29 \right)^2}
+ \right) =
+\\ =& \frac{\sqrt{0,\!64} + \sqrt{1,\!44}}{\frac 25}
+ -5 \cdot \left(
+  \sqrt{\left( \frac{16}9 \right)^2} -
+  \sqrt{\left( \frac 79 \right)^2}
+ \right) =
+\\ =& \frac{0,\!8 + 1,\!2}{\frac 25}
+ -5 \cdot \left( \frac{16}9 - \frac 79 \right) =
+ \frac{\frac 21}{\frac 25} - 5 \cdot \frac 99 =
+ \frac{10}{2} - 5 =
+ 5 - 5 =
+ 0
+\end{align}
+</details>
+<details open><summary>12.
+Укупна маса 20 кесица чаја од камилице је 25 грама.
+Колика је маса три кесице тог чаја?</summary>
+\begin{align}
+20 : 25 &= 3:x
+\\ x &= \frac{25 \cdot 3}{20}
+\\ x &= \frac{5 \cdot 3}{4}
+\\ x &= \frac{15}{4}
+\\ x &= 3 \frac{3}{4}
+\\ x &= 3,\!75
+\end{align}
+</details>
+
+<h1>Решавање система једначина (метод супротних коефицијената)</h1>
+
+<h1>Решавање система једначина</h1>
+<details open><summary>Подела система према броју решења</summary>
+<p>
+<table border="5" align="center">
+<tr align="center">
+<th>врста система</th>
+<th>број решења</th>
+<th>положај правих</th>
+</tr>
+<tr align="center">
+<th>неодређен</th>
+<td>бесконачно</td>
+<td>поклапају се</td>
+</tr>
+<tr align="center">
+<th>одређен</th>
+<td>једно</td>
+<td>секу се</td>
+</tr>
+<tr align="center">
+<th>немогућ</th>
+<td>нула</td>
+<td>паралелне и различите</td>
+</tr>
+</table>
+</p>
+</details>
+
+<h1>Еквивалентност система линеарних једначина</h1>
+
+<h1>Решење система</h1>
+<details open><summary>Методом елиминације реши систем једначина</summary>
+<p>
+\begin{align}
+ -8y+9x&=-5
+\\ 8y+7x&=-75
+\end{align}
+</p>
+</details>
+
+<h1>Рамзејева теорема</h1>
+<details open><summary>Свака од страница и дијагонала правилног шестоугла обојена је једном од две боје. Доказати да постоји троугао чија су темена уједно темена шестоугла и чије су све три странице исте боје.</summary>
+<p></p>
+</details>
+<details open><summary>У белој равни је просуто плаво мастило,
+ тако да су неке тачке обојене бело, а неке плаво. Доказати да постоји дуж чији су крајеви исте боје као и средиште дужи.</summary>
+<p>Ако је највише једна тачка плава, онда је лако. Уочимо полуправу која полази из те тачке. Све њене тачке осим почетне су беле. Било која дуж чији су крајеви две беле тачке са те полуправе су крајеви једне од тражених дужи.</p>
+<p>Ако су бар две тачке $P_1$ и $P_2$ плаве, и ако је средиште дужи $P_1 P_2$ плаво, онда је то тражена дуж. Ако је средиште дужи $P_1 P_2$ бела тачка $B_1$, Онда посматрамо две тачке на правој $P_1 P_2$ које се налазе изван дужи $P_1 P_2$ на растојањима од тачака $P_1$ и $P_2$ једнаким растојању између $P_1$ и $P_2$. Ако је једна од њих плава, онда она са једном од тачака $P_1$ и $P_2$ образује дуж чије је средиште преостала од две тачке $P_1$ и $P_2$. Ако су обе беле, онда оне образују дуж чије је средиште бела тачка $B_1$.</p>
+<p>У сваком од наведених случајева смо доказали да постоји дуж са крајевима једнако обојеним као и средиште.</p>
+</details>
+
+<h1>Решење система</h1>
+<details open><summary>Графички реши систем једначина</summary>
+<p>
+\begin{align}
+ y &= -7x+3
+\\ y &= -x-3
+\end{align}
+</p>
+</details>
+
+<h1>Решење система</h1>
+<details open><summary>3. Одреди вредност параметара $a$ и $b$ тако да уређени парови $(a, 3)$ и $(1, b)$ буду
+решења једначине:
+<ol type="roman">
+<li>$x + y = 23$;</li>
+<li>$x - 2y = 0$;</li>
+<li>$3x + 4y = 25$.</li>
+</ol>
+</summary>
+<p>
+\begin{align}
+ (x,y) &= (a,3)
+\\ x &= a, \quad y = 3
+\end{align}
+</p>
+</details>
+
+<h1>Систем од две линеарне једначине с две непознате</h1>
+<details open><summary>Системе решавамо</summary>
+<p>
+<ul>
+<li>графичком методом;</li>
+<li>методом замене;</li>
+<li>методом једнаких или супротних коефицијената.</li>
+</ul>
+</p>
+</details>
+
+<h1>Графичко представљање статистичких података</h1>
+<details clopen><summary>29. График функције $y = kx + n$ садржи тачку
+$M(2, –1)$ и паралелан је са графиком
+функције $y = \frac 12 x + \frac 14$. Да ли том
+графику припадају и тачке $P(2, 1)$ и $Q(–4, 4)$?</summary>
+<p>
+\begin{align}
+ k &= \frac 12
+\\ y &= kx+n
+\\ -1 &= \frac 12 \cdot 2 + n
+\\ -1 &= 1 + n
+\\ -1-1 &= n
+\\ n &= -2
+\\ y &= \frac 12 x - 2
+\\ P &\not\in p
+\\ 4 &= \frac 12 \cdot (-4) - 2
+\\ 4 &= -2 - 2
+\\ Q &\not\in p
+\end{align}
+</p>
+</details>
+<details clopen><summary>33. За функцију
+ $y = (2p + 1)x - 2 + p$ одреди вредност параметра $p$ тако да њен график буде паралелан са графиком
+функције: (в) $2x - 4y + 1 = 0$.</summary>
+<p>
+\begin{align}
+2x - 4y + 1 &= 0
+\\ - 4y &= -2x - 1
+\\ \frac{-4y}{-4} &= \frac{-2x}{-4} - \frac 1{-4}
+\\ y &= \frac{x}{2} + \frac 14
+\\ y &= kx+n
+\\ k &= \frac 12
+\\ 2p+1 &= \frac 12
+\\ 4p+2 &= 1
+\\ 4p &= 1-2
+\\ 4p &= -1
+\\ \frac{4p}4 &= \frac{-1}4
+\\ p &= -\frac 14
+\end{align}
+</p>
+</details>
+
+<h1>Средња вредност и медијана</h1>
+
+<h1>Цртање дијаграма</h1>
+<details open><summary>2. Атлетску екипу школе чине 6 ученика који имају 15 година и неколико ученика који
+имају 12 година. Ако је просечна старост екипе 14 година, колико ученика у екипи има
+12 година?</summary>
+<p>
+\begin{align}
+ 14 &= \frac{6 \cdot 15 + 12x}{6+x}
+\\ 14 (6+x) &= 90 + 12x
+\\ 84+14x &= 90 + 12x
+\\ 14x - 12x &= 90 - 84
+\\ 2x &= 6
+\\ x &= 3
+\end{align}
+</p>
+</details>
+
+<h1>Припремање за завршни испит</h1>
+<details open><summary>Збирка за матуру 363.</summary>
+<p>
+\begin{align}
+k &= \frac{-7,\!5}{3} = -2,\!5
+\\ y &= kx+n
+\\ y &= -2,\!5 x+n
+\\ 3 &= -2,\!5 \cdot (-2) + n
+\\ 3 &= 5 + n
+\\ n &= -2
+\\ y &= -2,\!5 x - 2
+\end{align}
+</p>
+</details>
+
+<h1>Графичко представљање статистичких података у облику дијаграма</h1>
+
+<h1>Графичко представљање статистичких података</h1>
+<details clopen><summary>Графикони (дијаграми)</summary>
+<p>
+<ol>
+<li>линијски</li>
+<li>стубичасти</li>
+<li>хистограм (спојени стубови)</li>
+<li>кружни (пита)</li>
+</ol>
+Више врста графикона може се наћи у програмима за табеларна израчунавања
+(Microsoft Office <a href="https://en.wikipedia.org/wiki/Microsoft_Excel">Excel</a>,
+ Libre Office <a href="https://en.wikipedia.org/wiki/LibreOffice_Calc">Calc</a>,
+ Google Docs <a href="https://en.wikipedia.org/wiki/Google_Spreadsheets">Табеле</a>,
+ <a href="https://en.wikipedia.org/wiki/Lotus_1-2-3">Lotus 1-2-3</a>,
+ Gnome <a href="https://en.wikipedia.org/wiki/Gnumeric">Gnumeric</a>, ...).
+</p>
+</details>
+
+<h1>Графичко представљање статистичких података</h1>
+
+<h1>График линеарне функције</h1>
+<details nopen><summary>38. Одреди вредност параметра $p$ тако да график функције $(p + 2)x + (1 – p)y + 2 = 0$ на координатним осама одсеца једнаке дужи.</summary>
+<p>
+\begin{align}
+(p+2)x + (1-p)y + 2 &= 0
+\\ Ax+By+C &= 0
+\\ A = p+2, \quad B &= 1-p, \quad C=2
+\\ (p+2) \cdot 0 + (1-p)y + 2 &= 0
+\\ (1-p)y &=  - 2
+\\ y &=  -\frac{2}{1-p}
+\\ (p+2)x + (1-p) \cdot 0 + 2 &= 0
+\\ (p+2)x &=  -2
+\\ x &=  -\frac 2{p+2}
+\\ \left| -\frac{2}{1-p} \right| &= \left| -\frac 2{p+2} \right|
+\\ \left| \frac{2}{1-p} \right| &= \left| \frac 2{p+2} \right|
+\\ \frac{|2|}{|1-p|} &= \frac{|2|}{|p+2|}
+\\ |1-p| &= |p+2|
+\\ 1-p = p+2 \;&\lor\; -1+p = p+2
+\\ -p-p = 2-1 \;&\lor\; p \in \text{Ø}
+\\ -2p &= 1
+\\ p &= - \frac 12
+\end{align}
+</p>
+</details>
+
+<h1>Пресек две праве</h1>
+<details open>
+1. Нацртај графике функција $y = -x$ и $y = 2x - 3$. Одреди координате пресечне тачке ова два графика.
+<summary>Детаљније</summary>
+<p>
+\begin{align}
+x&=1
+\\y&=-1
+\end{align}
+</p>
+</details>
+
+<h1>Неке особине графика линеарне функције.
+График функције $x=a$</h1>
+
+<h1>Цртање и читање графика</h1>
+<details open><summary>Нацртај график линеарне функције користећи нагиб и пресек са $y$ осом.</summary>
+<p>
+\begin{align}
+y &= 3x+3
+\\ k &= \frac{\Delta y}{\Delta x}
+ = 3 = \frac 31, \quad (x, y) = (0, 3)
+\end{align}
+</p>
+</details>
+<details open><summary>Нацртај график линеарне функције користећи нагиб и пресек са $y$ осом.</summary>
+<p>
+\begin{align}
+y &= 9x+1
+\\ k &= \frac{\Delta y}{\Delta x}
+ = 9 = \frac 91, \quad (x, y) = (0, 1)
+\end{align}
+</p>
+</details>
+
+<h1>Нула функције</h1>
+<details nopen><summary>1. Дата је функција $y = 3x - 5$.
+Одреди вредност независно променљиве $x$ за
+коју је: (б) $y = -3$;
+</summary>
+<p>
+\begin{align}
+y &= 3x - 5
+\\ -3 &= 3x - 5
+\\ -3x &= 3 - 5
+\\ -3x &= -2 \qquad / \cdot \frac 1{-3}
+\\ \frac{-3x}{-3} &= \frac{-2}{-3}
+\\ x &= \frac 23
+\end{align}
+</p>
+</details>
+<details nopen><summary>2. Дата је функција $f(x) = -2x + 1$.
+Одреди вредност независно променљиве $x$ за
+коју је:</summary>
+<details nopen><summary>(а) $f(x) = 1$;</summary>
+</details>
+<details nopen><summary>(б) $f(x) = -7$;
+</summary>
+</details>
+<details nopen><summary>(в) $f(x) = 0$.
+</summary>
+<p>
+\begin{align}
+f(x) &= -2x + 1
+\\ 0 &= -2x + 1
+\\ 2x &= 1 \qquad / \cdot \frac 12
+\\ x &= \frac 12
+\end{align}
+</p>
+</details>
+</details>
+
+<h1>Рашћење и опадање</h1>
+
+<h1>Линеарна функција</h1>
+<details nopen><summary>2. Дата је функција $f(x) = -2x + 1$. Одреди вредност независно променљиве $x$ за коју је:</summary>
+<details nopen><summary>(а) $f(x) = 1$;</summary>
+<p>
+\begin{align}
+f(x) &= 1
+\\ -2x+1 &= 1
+\\ -2x &= 1-1
+\\ -2x &= 0 \quad / \cdot \frac 1{-2}
+\\ \frac{-2x}{-2} &= \frac 0{-2} \quad / \cdot \frac 1{-2}
+\\ x &= 0
+\end{align}
+</p>
+</details>
+<details nopen><summary>(б) $f(x) = -7$;</summary>
+<p>
+\begin{align}
+f(x) &= -7
+\\ -2x+1 &= -7
+\\ -2x &= -7-1
+\\ -2x &= -8 \quad / \cdot \frac 1{-2}
+\\ \frac{-2x}{-2} &= \frac{-8}{-2} \quad / \cdot \frac 1{-2}
+\\ x &= 4
+\end{align}
+</p>
+</details>
+<details nopen><summary>(в) $f(x) = 0$.</summary>
+<p>
+\begin{align}
+f(x) &= 0
+\\ -2x+1 &= 0
+\\ -2x &= 0-1
+\\ -2x &= -1 \quad / \cdot \frac 1{-2}
+\\ \frac{-2x}{-2} &= \frac{-1}{-2} \quad / \cdot \frac 1{-2}
+\\ x &= \frac 12
+\end{align}
+</p>
+</details>
+</details>
+<details nopen><summary>14. Дата је функција $y = (p + 2)x + p$. Одреди вредност параметра $p$ тако да график
+функције садржи тачку $F(2, 1)$.</summary>
+<p>
+\begin{align}
+y &= (p + 2)x + p
+\\ 1 &= (p + 2) \cdot 2 + p
+\\ 1 &= 2p + 4 + p
+\\ 1 - 4 &= 2p + p
+\\ -3 &= 3p \qquad / \cdot \frac 13
+\\ \frac{-3}3 &= \frac{3p}3
+\\ p &= -1
+\\ y &= (-1 + 2)x - 1
+\\ y &= x - 1
+\end{align}
+</p>
+</details>
+
+<h1>Збирка за припрему за завршни испит</h1>
+<details open><summary>357.</summary>
+<p>Упрости израз $A = 2 (x+5) (x-7) - (3x-2)^2 + 3x^2 + 9$,
+па одреди његову вредност за $x=0,\!5$.
+\begin{align}
+A &= 2 (x+5) (x-7) - (3x-2)^2 + 3x^2 + 9
+\\&= 2x^2 - 14x + 10x - 70 - (3x)^2 + 2 \cdot 3x \cdot 2 - 2^2 + 3x^2 + 9
+\\&= 2x^2 - 4x - 70 - 9x^2 + 12x - 4 + 3x^2 + 9
+\\&= -4x^2 + 8x - 65
+\\ x&= 0,\!5
+\\ A&= -4 \cdot 0,\!5^2 + 8 \cdot 0,\!5 - 65
+\\ &= -4 \cdot 0,\!25 + 4,\!0 - 65
+\\ &= -1,\!00 + 4,\!0 - 65
+\\ &= -62
+\end{align}
+</p></details>
+
+<h1>Цртање графика</h1>
+<details open><summary>13. (а)</summary>
+<p>
+\begin{align}
+y &= -3x+n
+\\ 3 &= -3\cdot 1+n
+\\ 3 &= -3+n
+\\ 3+3 &= n
+\\ n &= 6
+\end{align}
+</p>
+</details>
+
+<h1>Имплицитни облик функције $Ax+By+C=0$</h1>
+<details open><summary>14. Дате линеарне функције запиши у
+експлицитном облику:</summary>
+<p>
+<details nopen><summary>(а) $3x + y + 2 = 0$;</summary>
+\begin{align}
+3x+y+2&=0
+\\ y&=-3x-2
+\\Ax+By+C&=0
+\\ y&=kx+n
+\end{align}</details>
+<details nopen><summary>(б) $-2x + 2y - 4 = 0$;</summary>
+\begin{align}
+-2x + 2y - 4 &= 0
+\\ 2y&=2x+4 \qquad / \cdot \frac 12
+\\ \frac{2y}2 &= \frac{2x}2 + \frac 42
+\\ y &= x + 2
+\end{align}</details>
+<details nopen><summary>(в) $6x - 3y + 9 = 0$;</summary>
+\begin{align}
+6x - 3y + 9 &= 0
+\\ -3y&=-6x-9 \qquad / \cdot \left( \frac 1{-3} \right)
+\\ \frac{-3y}{-3}&=\frac{-6x}{-3} + \frac{-9}{-3}
+\\ y &= 2x + 3
+\end{align}</details>
+<details open><summary>(г) $5x - 2y - 4 = 0$;</summary></details>
+<details open><summary>(д) $-7x + 5y + 3 = 0$;</summary></details>
+<details open><summary>(ђ) $-2x - 8y + 1 = 0$.</summary></details>
+</p>
+</details>
+
+<h1><a href="https://drive.google.com/open?id=0B0m_wvQ6DqvpUThudC1TWUx2QmM">8070 Површина и запремина пирамиде</a></h1>
+<ul>
+<li><details open><summary>Збирка, страна 71, задатак 25</summary>
+<p>Израчунај површину и запремину тела које се састоји од једне коцке и две
+правилне четворостране једнакоивичне пирамиде које су основама слепљене
+за две наспрамне стране коцке. Ивица коцке је \(2 \,\mathrm{cm}\). Види слику.
+\begin{align}
+P &
+= 4 a^2 + 8 \cdot \frac{a^2 \sqrt 3}4
+= 4 \cdot 2^2 + 2 \cdot 2^2 \sqrt 3
+= (16 + 8 \sqrt 3) \, \mathrm{cm}^2
+\\ H &
+= \sqrt{a^2 - \left( \frac {a \sqrt 2}2 \right)^2}
+= \sqrt{2^2 - \left( \frac {2 \sqrt 2}2 \right)^2}
+= \sqrt{4 - 2}
+= \sqrt 2 \, \mathrm{cm}
+\\ V &
+= a^3 + 2 \cdot \frac 13 a^2 H
+= 2^3 + 2 \cdot \frac 13 2^2 \sqrt 2
+= \left( 8 + \frac 83 \sqrt 2 \right) \,\mathrm{cm}^3
+\end{align}
+</p>
+</details></li>
+<li><details xopen><summary>Збирка, страна 71, задатак 27</summary>
+<p>Израчунај запремину тела које настаје
+када се из коцке \( ABCDA_1 B_1 C_1 D_1 \) ивице
+\(a = 6 \,\mathrm{cm}\) издуби пирамида \(ABCDS\), где је \(S\)
+средиште стране \(A_1 B_1 C_1 D_1 \).
+\begin{align}
+V &
+= a^3 - \frac 13 a^2 \cdot a
+= \frac 23 a^3
+= \frac 23 \cdot 6 \cdot 6 \cdot 6
+= 4 \cdot 36
+= 144 \, \mathrm{cm}^3
+\end{align}
+</p>
+</details></li>
+<li><details xopen><summary>Збирка, страна 73, задатак 54</summary>
+<p>Одреди површину и запремину
+пирамиде са слике ако је ивица коцке
+\(12 \,\mathrm{cm}\).
+\begin{align}
+x&=\ldots
+\end{align}
+</p>
+</details></li>
+<li><details xopen><summary>Збирка, страна 77, задатак 29</summary>
+<p>Израчунај површину и запремину тела које настаје
+спајањем правилне шестостране призме и правилне шестостране
+пирамиде које имају заједничку основу. Види слику.
+\begin{align}
+x&=\ldots
+\end{align}
+</p>
+</details></li>
+<li><details xopen><summary>Домаћи задатак</summary>
+<ul>
+<li>Знам за матуру, страна 123, задаци 169, 170.</li>
+<li>Знам за више, стране
+<a href="https://drive.google.com/open?id=0B0m_wvQ6DqvpZ2Y0SDNTc0FxakE">53</a>,
+<a href="https://drive.google.com/open?id=0B0m_wvQ6DqvpamFoZ1pNeGRvb1U">54</a>,
+ задаци 4, 5.</li>
+</ul>
+</details></li>
+</ul>
+
+<h1>Запремина правилне шестостране пирамиде</h1>
+<details open><summary>9. (стр 75)
+</summary>
+Од гранита је направљен споменик
+који има облик правилне шестостране
+пирамиде. Израчунај масу споменика
+ако је основна ивица \(0,\!6m\), а висина
+споменика \(1m\). (Густина гранита је
+\(2,\!3 g/cm^3\), узети \(\sqrt 3 ≈ 1,\!73\).)
+<p>
+\begin{align}
+B &= 6 \cdot \frac{a^2 \sqrt 3}4
+= 3 \cdot \frac{0,\!6^2 \sqrt 3}2
+= 3 \cdot \frac{0,\!36 \sqrt 3}2
+= 3 \cdot 0,\!18 \sqrt 3
+= 0,\!54 \sqrt 3 \,\mathrm{m}^2
+\\ V &= \frac 13 B H
+= \frac 13 0,\!54 \sqrt 3 \cdot 1
+= 0,\!18 \sqrt 3 \, \mathrm{m}^3
+\\ m &= \rho V
+= 2,\!3 \cdot 1000 \cdot 0,\!18 \cdot 1,\!73
+= 716,\!22 \,\mathrm{kg}
+\end{align}
+</p>
+</details>
+
+<h1>Тространа пирамида</h1>
+<details open><summary>1.</summary>
+<p>
+Израчунај површину и запремину
+правилне тростране пирамиде ако је
+основна ивица дужине 12cm, а бочна
+ивица дужине 10cm.
+\begin{align}
+a&=12 \,\mathrm{cm} \quad b = 10 \,\mathrm{cm}
+\\ b^2 &= H^2 + \left( \frac{a \sqrt 3}3 \right)^2
+\\ 10^2 &= H^2 + \left( \frac{12 \sqrt 3}3 \right)^2
+\\ 100 &= H^2 + ( 4 \sqrt 3 )^2
+= H^2 + 16 \cdot 3
+\\ H^2 &= 100 - 48
+\\ H &= \sqrt{52} = \sqrt{4 \cdot 13}
+\\ H &= 2 \sqrt{13} \,\mathrm{cm}
+\\ V &= \frac 13 BH = \frac 13 \frac{a^2 \sqrt 3}4 H
+\\ V &= \frac 13 \frac{12^2 \sqrt 3}4 \cdot 2 \sqrt{13}
+= 12 \sqrt 3 \cdot 2 \sqrt{13}
+= 24 \sqrt{39} \, \mathrm{cm}^3
+\\ h^2 &= H^2 + \left( \frac{a \sqrt 3}6 \right)^2
+\\ h &= \sqrt{ (2 \sqrt{13})^2 + \left( \frac{12 \sqrt 3}6 \right)^2 }
+= \sqrt{ 4 \cdot 13 + \left( 2 \sqrt 3 \right)^2 }
+= \sqrt{ 52 + 12 }
+= \sqrt{ 64 }
+= 8 \,\mathrm{cm}
+\\ P &= B+M = \frac{a^2 \sqrt 3}4 + 3 \frac{ah}2
+= \frac{12^2 \sqrt 3}4 + 3 \frac{12 \cdot 8}2
+= (36 \sqrt 3 + 144) \,\mathrm{cm}^2
+\end{align}
+</p>
+</details>
+
+<h1>Призма</h1>
+<h1>Површина тростране призме</h1>
+<details open><summary>Детаљније</summary>
+<p>
+Обим основе правилне четворостране
+призме је 76cm, а висина 7cm. Израчунај
+површину призме.
+</p>
+<p>
+\begin{align}
+ O_B &= 76 \,\mathrm{cm}, \quad H = 7 \,\mathrm{cm}
+\\ a &= O_B : 4 = 76:4 = 19 \,\mathrm{cm}
+\\ B &= a^2 = 19^2 = 361 \,\mathrm{cm}^2
+\\ P &= 2B+M = 2 a^2 + 4 aH
+\\ P &= 2 \cdot 361 + 4 \cdot 19 \cdot 7 = 722 + 532 = 1254 \,\mathrm{cm}^2
+\end{align}
+</p>
+</details>
+
+</textarea>
+  <a href="http://jsbin.com/pifa/edit?html">Измена кода ове странице</a>
+  </body>
+</html>
