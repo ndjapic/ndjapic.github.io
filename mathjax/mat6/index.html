@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width">
+    <title>MathJax едитор</title>
+    <base target="_blank">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <script type="text/javascript">
+      var job;
+      function update(){
+        if(job){clearTimeout(job);}
+        job = setTimeout(
+          function(){
+            var datetime = "<p>Време синхронизације: " + new Date().toLocaleString() + "</p>";
+            var tarea = document.getElementsByTagName('textarea')[0];
+            document.getElementById('main').innerHTML = tarea.value + datetime;
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            MathJax.Hub.Queue(function(){tarea.focus();});            
+          },
+          3000
+        );
+      }
+    </script>
+  
+<style id="jsbin-css">
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  text-align: justify;
+  color: white;
+  background-color: black;
+}
+div#main {
+  font-size: 140%;
+}
+h1,h2,h3 {
+  text-align: center;
+  color: yellow;
+  background-color: maroon;
+}
+textarea {
+  position: fixed;
+  bottom: 0.5ex;
+  right: 0.5ex;
+  opacity: 0.2;
+}
+textarea:hover {
+  opacity: 0.8;
+}
+
+</style>
+</head>
+  <body onload="update();">
+    <div id="main" width="100%"></div>
+    <textarea rows="5" cols="64" onkeyup="update();">
+
+<h1>Вектори</h1>
+<details open><summary>Детаљније</summary>
+<p>Три карактеристике које одређују (слободни) вектор су
+<ol>
+<li>интензитет (дужина)</li>
+<li>правац</li>
+<li>смер</li>
+</ol>
+Везани вектор је усмерена дуж.
+$\overrightarrow{DE} = \overrightarrow{FG}$.
+$\overrightarrow{FG} = - \overrightarrow{HI}$.
+Користе се две конструкције за одређивање збира вектора:
+<ul>
+<li>правило троугла</li>
+<li>правило паралелограма</li>
+</ul>
+$$
+  \overrightarrow{AB} + \overrightarrow{CD}
+= \overrightarrow{AB} + \overrightarrow{BF}
+= \overrightarrow{AF} = \overrightarrow{GK}
+$$
+$$
+  \overrightarrow{AB} \cdot (-2) = \overrightarrow{EF}
+\quad -0,\!5 \overrightarrow{EF} = \overrightarrow{AB}
+\quad -1 \frac 12 \overrightarrow{EF}
+  = \overrightarrow{AD} = - \overrightarrow{DA}
+$$
+$$
+  \overrightarrow{AB} - \overrightarrow{CD} =
+  \overrightarrow{AB} + (- \overrightarrow{CD}) =
+  \overrightarrow{AB} + \overrightarrow{AE} =
+  \overrightarrow{AF}
+$$
+</p>
+</details>
+
+<h1>Допунска настава</h1>
+<details open><summary>(б)</summary>
+<p>Два угла од којих је један три пута већи од другог нису једнаки, па нису наспрамни углови. Они су суседни углови ромба и, према томе, суплементни су.</p>
+\begin{align}
+ \beta &= 3 \cdot \alpha,
+ \quad \alpha + \beta = 180^\circ
+ \quad \alpha = 180^\circ : 4 = 45^\circ,
+\\ \beta &= 180^\circ - 45^\circ = 135^\circ,
+ \quad \beta = 3 \cdot 45^\circ = 135^\circ.
+\end{align}
+</details>
+<details clopen><summary>(а)</summary>
+\begin{align}
+ \alpha + \beta &= 180^\circ \ne 230^\circ
+\end{align}
+Углови нису суседни, него наспрамни. Наспрамни углови паралелограма су једнаки, а ромб је паралелограм.
+\begin{align}
+ \beta + \delta &= 230^\circ = \beta + \beta
+\\ \beta = \delta &= 230^\circ : 2 = 115^\circ
+\\ \alpha = \gamma &= 180^\circ - 115^\circ = 65^\circ
+\end{align}
+</details>
+<details open><summary>Детаљније</summary>
+<p>64. Израчунај унутрашње углове ромба ако је:
+<ul>
+<li>а) збир два унутрашња угла 230°;</li>
+<li>б) један унутрашњи угао три пута већи од другог;</li>
+<li>в) један унутрашњи угао мањи од другог за 24°.</li>
+</ul>
+</p>
+</details>
+
+<h1>Правоугаоник, ромб и квадрат</h1>
+<details open><summary>Детаљније</summary>
+<p>Правоугаоник има једнаке дијагонале.</p>
+</details>
+
+<h1>Особине паралелограма</h1>
+<details open><summary>Детаљније</summary>
+<p>Суседни углови су суплементни.</p>
+<p>Наспрамни углови су једнаки.</p>
+<p>Дијагонале се полове.</p>
+<p>Наспрамне странице су једнаке.</p>
+</details>
+
+<h1>Четвороугао</h1>
+<details open><summary>Детаљније</summary>
+<p>Четвороугао је многоугао са четири угла, четири странице и четири темена.
+\begin{align}
+ \alpha + \beta + \gamma + \delta &= 360^\circ
+\\ \alpha_1 + \beta_1 + \gamma_1 + \delta_1 &= 360^\circ
+\end{align}
+</p>
+</details>
+
+<h1>Делтоид</h1>
+<details open><summary>Детаљније</summary>
+<p>Делтоид је четвороугао са два пара једнаких суседних страница.
+<h2>Својства</h2>
+<ol>
+<li>Делтоид има два једнака наспрамна угла</li>
+<li>Дијагонале су нормалне.</li>
+<li>Средиште једне дијагонале припада другој.</li>
+<li>Та друга дијагонала је оса симетрије,</li>
+<li>а и симетрала углова.</li>
+</ol>
+</p>
+</details>
+
+<h1>Школски рад</h1>
+<h1>Множење целих бројева</h1>
+<p>Производ бројева истог знака је позитиван.</p>
+<p>Производ бројева различитих знакова је негативан.</p>
+<p>Апсолутна вредност производа је производ апсолутних вредности чинилаца.</p>
+$$
+ |a \cdot b| = |a| \cdot |b|
+$$
+
+<h1>Школски рад</h1>
+<h1>Једначине са сабирањем и одузимањем целих бројева</h1>
+
+</textarea>
+  <a href="http://jsbin.com/pifa/edit?html">Измена кода ове странице</a>
+  </body>
+</html>
