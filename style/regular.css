@@ -1,20 +1,24 @@
 body {
-  font-family: sans;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  text-align: justify;
+  color: black;
+  background-color: while;
 }
-h1,h2,h3,h4 {
-  color: yellow;
-  background-color: maroon;
-  cursor: pointer;
-  border: solid maroon 1pt;
+div#main {
+  font-size: 140%;
 }
 h1,h2,h3 {
   text-align: center;
+  color: maroon;
+  background-color: yellow;
 }
-p {
-  text-align: justify;
+textarea {
+  position: fixed;
+  bottom: 0.5ex;
+  right: 0.5ex;
+  opacity: 0.2;
 }
-h2:hover, h3:hover, h4:hover {
-  border: solid yellow 1pt;
+textarea:hover {
+  opacity: 0.8;
 }
-a:visited {color: pink;}
-a {color: yellow;}
