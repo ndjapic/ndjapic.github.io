@@ -18,5 +18,5 @@ p {
 h2:hover, h3:hover, h4:hover {
   border: solid yellow 1pt;
 }
-a:visited {color: pink;}
-a {color: yellow;}
+/* a:visited {color: pink;} */
+/* a {color: yellow;} */
