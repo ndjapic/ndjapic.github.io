@@ -1,8 +1,9 @@
 n = int(input())
 
-p = 2
-while p*p <= n:
-    while n % (p*p) == 0: n //= p*p
-    p += 1
+d = 2
+while d*d*d <= n:
+    while n % (d*d) == 0:
+        n //= d*d
+    d += 1
 
 print(n)
