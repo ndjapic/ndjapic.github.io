@@ -7,7 +7,7 @@ if 5 <= n <= 12:
     karta = 2800
 if 13 <= n <= 64:
     karta = 3500
-if n >= 64:
+if n >= 65:
     karta = 3200
 
 platiti = k * karta
