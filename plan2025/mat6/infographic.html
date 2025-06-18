@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza realizacije nastavnog plana - Matematika VI razred</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Analiza Realizacije Nastavnog Plana</h1>
+            <p class="text-xl text-gray-600 mt-2">Matematika, VI razred, školska 2024/2025. | OŠ "Ivan Goran Kovačić", Stanišić</p>
+        </header>
+
+        <section id="kpi" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="card text-center">
+                <p class="text-4xl font-bold text-blue-600" id="totalClasses">141</p>
+                <p class="text-gray-500 mt-2">Ukupno Održanih Časova</p>
+            </div>
+            <div class="card text-center">
+                <p class="text-4xl font-bold text-red-600" id="missedClasses">4</p>
+                <p class="text-gray-500 mt-2">Izgubljena Časa (Štrajk)</p>
+            </div>
+            <div class="card text-center">
+                <p class="text-4xl font-bold text-green-600" id="madeUpClasses">3</p>
+                <p class="text-gray-500 mt-2">Nadoknađena Časa</p>
+            </div>
+            <div class="card text-center">
+                <p class="text-4xl font-bold text-indigo-600" id="testsHeld">5</p>
+                <p class="text-gray-500 mt-2">Realizovanih Provera Znanja</p>
+            </div>
+        </section>
+
+        <section id="planVsReality" class="card mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-center">Planirani i Realizovani Časovi po Mesecima</h2>
+            <p class="text-center text-gray-600 mb-6">Analiza pokazuje kako su neplanirani događaji, poput produženog raspusta i štrajkova, uticali na dinamiku nastave. Januarski manjak je delimično kompenzovan nadoknadama u narednim mesecima.</p>
+            <div class="chart-container">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <section id="classTypeDistribution" class="card">
+                <h2 class="text-2xl font-bold mb-4 text-center">Struktura Održanih Časova</h2>
+                <p class="text-center text-gray-600 mb-6">Raspodela časova prema tipu. Veći procenat časova utvrđivanja ukazuje na fokus na praktičnoj primeni znanja.</p>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="classTypeChart"></canvas>
+                </div>
+            </section>
+
+            <section id="topicDistribution" class="card">
+                <h2 class="text-2xl font-bold mb-4 text-center">Zastupljenost Tematskih Celina</h2>
+                <p class="text-center text-gray-600 mb-6">Prikaz procentualne zastupljenosti obrađenih tematskih celina tokom školske godine.</p>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="topicChart"></canvas>
+                </div>
+            </section>
+        </div>
+        
+        <section id="timeline" class="card mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-center">Ključni Događaji Tokom Školske Godine</h2>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 w-0.5 h-full bg-gray-300 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline Items -->
+                <div class="relative flex justify-between items-center w-full mb-8">
+                    <div class="w-5/12">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-right">
+                            <h3 class="font-semibold text-lg">Početak Školske Godine</h3>
+                            <p class="text-sm text-gray-600">2. septembar 2024.</p>
+                        </div>
+                    </div>
+                    <div class="w-1/12 flex justify-center">
+                        <div class="w-4 h-4 bg-blue-500 rounded-full z-10"></div>
+                    </div>
+                    <div class="w-5/12"></div>
+                </div>
+
+                <div class="relative flex justify-between items-center w-full mb-8">
+                    <div class="w-5/12"></div>
+                    <div class="w-1/12 flex justify-center">
+                        <div class="w-4 h-4 bg-yellow-500 rounded-full z-10"></div>
+                    </div>
+                    <div class="w-5/12">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <h3 class="font-semibold text-lg">Prvi Pismeni Zadatak</h3>
+                            <p class="text-sm text-gray-600">25. oktobar 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative flex justify-between items-center w-full mb-8">
+                    <div class="w-5/12">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-right">
+                            <h3 class="font-semibold text-lg">Drugi Pismeni Zadatak</h3>
+                            <p class="text-sm text-gray-600">16. decembar 2024.</p>
+                        </div>
+                    </div>
+                    <div class="w-1/12 flex justify-center">
+                        <div class="w-4 h-4 bg-yellow-500 rounded-full z-10"></div>
+                    </div>
+                    <div class="w-5/12"></div>
+                </div>
+
+                <div class="relative flex justify-between items-center w-full mb-8">
+                    <div class="w-5/12"></div>
+                    <div class="w-1/12 flex justify-center">
+                        <div class="w-4 h-4 bg-red-500 rounded-full z-10"></div>
+                    </div>
+                    <div class="w-5/12">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <h3 class="font-semibold text-lg">Štrajk & Produženje raspusta</h3>
+                            <p class="text-sm text-gray-600">Decembar - Januar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-between items-center w-full mb-8">
+                    <div class="w-5/12">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-right">
+                            <h3 class="font-semibold text-lg">Treći Pismeni Zadatak</h3>
+                            <p class="text-sm text-gray-600">11. mart 2025.</p>
+                        </div>
+                    </div>
+                    <div class="w-1/12 flex justify-center">
+                        <div class="w-4 h-4 bg-yellow-500 rounded-full z-10"></div>
+                    </div>
+                    <div class="w-5/12"></div>
+                </div>
+
+                <div class="relative flex justify-between items-center w-full">
+                    <div class="w-5/12"></div>
+                    <div class="w-1/12 flex justify-center">
+                        <div class="w-4 h-4 bg-yellow-500 rounded-full z-10"></div>
+                    </div>
+                    <div class="w-5/12">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <h3 class="font-semibold text-lg">Četvrti Pismeni Zadatak</h3>
+                            <p class="text-sm text-gray-600">20. maj 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-4 border-t border-gray-300">
+            <p class="text-gray-600">&copy; 2024-2025 Analiza nastavnog procesa, kreirao Nenad Đapić.</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const formatLabel = (label) => {
+                if (typeof label === 'string' && label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                        if ((currentLine + ' ' + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = word;
+                        } else {
+                            currentLine += ' ' + word;
+                        }
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            // Bar Chart: Planirani vs Realizovani časovi
+            const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+            const monthlyChart = new Chart(monthlyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Sep', 'Okt', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun'],
+                    datasets: [{
+                        label: 'Planirano Časova',
+                        data: [16, 19, 16, 13, 16, 12, 16, 13, 14, 7],
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Realizovano Časova',
+                        data: [17, 18, 16, 12, 5, 16, 17, 16, 17, 8],
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // Pie Chart: Tip Časa
+            const classTypeCtx = document.getElementById('classTypeChart').getContext('2d');
+            const classTypeChart = new Chart(classTypeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Obrada', 'Utvrđivanje', 'Sistematizacija', 'Provera'],
+                    datasets: [{
+                        data: [45, 68, 11, 5],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 99, 132, 0.8)'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Pie Chart: Teme
+            const topicCtx = document.getElementById('topicChart').getContext('2d');
+            const topicChart = new Chart(topicCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Uvod/Obrada', 'Celi Brojevi', 'Trougao', 'Racionalni Brojevi', 'Četvorougao', 'Površina'],
+                    datasets: [{
+                        data: [6, 16, 26, 32, 28, 22],
+                        backgroundColor: [
+                            '#4A90E2', '#50E3C2', '#F5A623', '#F8E71C', '#BD10E0', '#9013FE'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
