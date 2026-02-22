@@ -1,0 +1,23 @@
+<nav class="main-nav">
+  <a href="{{ '/' | relative_url }}">Почетна</a>
+  <a href="{{ '/o-meni.html' | relative_url }}">О мени</a>
+  <a href="{{ '/kontakt.html' | relative_url }}">Контакт</a>
+</nav>
+
+<style>
+  .main-nav {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px; /* Размак између линкова */
+  }
+  .main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  .main-nav a:hover {
+    color: #007bff;
+  }
+</style>
