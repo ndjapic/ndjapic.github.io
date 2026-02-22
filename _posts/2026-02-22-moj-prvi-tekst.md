@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Добродошли на мој Jekyll сајт!"
 date: 2026-02-22
 ---
