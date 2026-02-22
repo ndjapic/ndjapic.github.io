@@ -1,3 +1,6 @@
 theme: jekyll-theme-minimal
 title: Nenad's homepage
 description: Sample homepage
+url: "https://ndjapic.github.io" # Ваша адреса
+baseurl: "" # Оставите празно ако је главни репозиторијум, иначе ставите име фолдера
+permalink: /:basename/
