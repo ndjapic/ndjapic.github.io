@@ -3,8 +3,7 @@ theme: jekyll-theme-minimal
 # Основне информације о сајту
 title: Мој Jekyll Сајт
 email: vas-email@example.com
-description: >- # Кратак опис сајта за претраживаче
-	Ово је мој нови сајт пребачен са HTML-а на Jekyll.
+description: Ово је мој нови сајт пребачен са HTML-а на Jekyll. # Кратак опис сајта за претраживаче
 
 # GitHub Pages подешавања
 url: "https://ndjapic.github.io" # Ваша адреса
