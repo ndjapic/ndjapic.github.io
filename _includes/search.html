@@ -1,0 +1,8 @@
+<div class="search-container" style="margin: 10px 0;">
+  <form method="get" action="https://duckduckgo.com">
+    <input type="text" name="q" placeholder="Претражи сајт..." aria-label="Претрага" required style="padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+    <!-- Овај скривени параметар ограничава претрагу само на ваш сајт -->
+    <input type="hidden" name="sites" value="{{ site.url | remove: 'https://' | remove: 'http://' }}">
+    <button type="submit" style="padding: 5px 10px; cursor: pointer;">🔍</button>
+  </form>
+</div>
