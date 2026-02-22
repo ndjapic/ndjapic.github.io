@@ -1,16 +1,22 @@
-{% assign month = post.date | date: "%-m" %}
-{{ post.date | date: "%-d." }}
-{% case month %}
-  {% when '1' %}јануар
-  {% when '2' %}фебруар
-  {% when '3' %}март
-  {% when '4' %}април
-  {% when '5' %}мај
-  {% when '6' %}јун
-  {% when '7' %}јул
-  {% when '8' %}август
-  {% when '9' %}септембар
-  {% when '10' %}октобар
-  {% when '11' %}новембар
-  {% when '12' %}децембар
-{% endcase %}
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p class="meta">
+    <!-- Овде иде ваш код за датум који сте већ написали -->
+    {% assign month = page.date | date: "%-m" %}
+    {{ page.date | date: "%-d." }}
+    {% case month %}
+      {% when '1' %}јануар {% when '2' %}фебруар {% when '3' %}март
+      {% when '4' %}април {% when '5' %}мај {% when '6' %}јун
+      {% when '7' %}јул {% when '8' %}август {% when '9' %}септембар
+      {% when '10' %}октобар {% when '11' %}новембар {% when '12' %}децембар
+    {% endcase %}
+    {{ page.date | date: "%Y." }}
+  </p>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
