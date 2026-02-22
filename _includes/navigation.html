@@ -1,10 +1,14 @@
 <nav class="main-nav">
-  <a href="{{ '/' | relative_url }}">Почетна</a>
+  <a href="{{ '/' | relative_url }}" 
+     class="{% if page.url == '/' %}active{% endif %}">Почетна</a>
   
   {% assign sorted_pages = site.pages | sort: "nav_order" %}
   {% for p in sorted_pages %}
     {% if p.title and p.nav_order %}
-      <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      <a href="{{ p.url | relative_url }}" 
+         class="{% if page.url == p.url %}active{% endif %}">
+         {{ p.title }}
+      </a>
     {% endif %}
   {% endfor %}
 </nav>
@@ -24,6 +28,11 @@
   }
   .main-nav a:hover {
     color: #007bff;
+  }
+  .main-nav a.active {
+    color: #d35400; /* Наранџаста или нека друга уочљива боја */
+    font-weight: bold;
+    border-bottom: 2px solid #d35400;
   }
   .main-nav {
     display: flex;
