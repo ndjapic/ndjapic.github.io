@@ -1,6 +1,26 @@
 theme: jekyll-theme-minimal
-title: Nenad's homepage
-description: Sample homepage
+
+# Основне информације о сајту
+title: Мој Jekyll Сајт
+email: vas-email@example.com
+description: >- # Кратак опис сајта за претраживаче
+	Ово је мој нови сајт пребачен са HTML-а на Jekyll.
+
+# GitHub Pages подешавања
 url: "https://ndjapic.github.io" # Ваша адреса
-baseurl: "" # Оставите празно ако је главни репозиторијум, иначе ставите име фолдера
-permalink: /:basename/
+baseurl: "" # Оставите празно ако је насловна страна вашег профила
+
+# Подешавања линкова
+#permalink: /:basename/
+permalink: pretty # Претвара 'kontakt.html' у чист линк 'kontakt/'
+
+# Искључивање фајлова које Jekyll не треба да процесира
+exclude:
+	- Gemfile
+	- Gemfile.lock
+	- node_modules/
+	- .sass-cache/
+	- .jekyll-cache/
+	- .jekyll-metadata/
+	- vendor/
+	
