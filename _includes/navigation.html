@@ -1,7 +1,12 @@
 <nav class="main-nav">
   <a href="{{ '/' | relative_url }}">Почетна</a>
-  <a href="{{ '/o-meni.html' | relative_url }}">О мени</a>
-  <a href="{{ '/kontakt.html' | relative_url }}">Контакт</a>
+  
+  {% assign sorted_pages = site.pages | sort: "nav_order" %}
+  {% for p in sorted_pages %}
+    {% if p.title and p.nav_order %}
+      <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    {% endif %}
+  {% endfor %}
 </nav>
 
 <style>
