@@ -1,0 +1,44 @@
+<button onclick="topFunction()" id="scrollTopBtn" title="Врх странице">↑</button>
+
+<style>
+  #scrollTopBtn {
+    display: none; /* Сакривено по дефолту */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: opacity 0.3s;
+  }
+
+  #scrollTopBtn:hover {
+    background-color: #555;
+  }
+</style>
+
+<script>
+  // Прикажи дугме када корисник скролује 300px наниже
+  let mybutton = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // Функција за повратак на врх
+  function topFunction() {
+    window.scrollTo({top: 0, behavior: 'smooth'}); // Глатко скроловање
+  }
+</script>
