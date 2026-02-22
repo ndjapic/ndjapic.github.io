@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Моја Почетна"
+title: "Почетна"
 ---
 <h1>Почетна страница</h1>
 
@@ -17,6 +17,8 @@ title: "Моја Почетна"
 <a href="https://github.com/ndjapic/ndjapic.github.io/wiki/inf7">7</a>,
 <a href="https://github.com/ndjapic/ndjapic.github.io/wiki/inf8">8</a>
 разред.</p>
+
+<p>Куцано у маркдаун фајлу.</p>
 
 <script>
 window.onload = function(){
