@@ -16,23 +16,18 @@
 
 <style>
   .main-nav {
-    /*display: flex;
-    flex-direction: column;*/ /* Ређа линкове један испод другог */
-    /*width: 150px;
-    float: left;
-    margin-right: 20px;*/
-  }
-  .main-nav {
     background: #f4f4f4;
     padding: 10px;
-    /*margin-bottom: 20px;*/
     display: flex;
-    gap: 15px; /* Размак између линкова */
+    gap: 15px;
+    align-items: baseline; /* Ово поравнава линкове према линији текста */
+    padding: 10px;
   }
   .main-nav a {
     text-decoration: none;
     color: #333;
-    /*font-weight: bold;*/
+    padding-bottom: 2px; /* Ово контролише тачан размак између текста и линије */
+    display: inline-block;
   }
   .main-nav a:hover {
     color: #007bff;
