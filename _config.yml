@@ -1,6 +1,7 @@
 theme: jekyll-theme-minimal
 timezone: Europe/Belgrade
 lang: sr-RS
+markdown: kramdown
 
 # Основне информације о сајту
 title: Мој Jekyll Сајт
