@@ -2,6 +2,7 @@
 layout: post
 title: "Запремина праве купе"
 date: 2026-04-27 10:00:00 +0200
+categories: mat8 11_kupa
 use_math: true
 ---
 
