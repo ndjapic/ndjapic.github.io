@@ -16,32 +16,42 @@ dot_code = """digraph "Ромб" {
 
     node[shape=box style="filled, rounded" fillcolor="#FFFDE7" color="#FBC02D"];
     
+    // Формула: P = a * h
     P0 [label=<<I>P</I> = <I>a</I> · <I>h</I>>, tooltip="Површина као код паралелограма"];
     
+    // Формула са разломком: P = (d1 * d2) / 2
     P1 [label=<
         <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
             <TR>
-                <TD ROWSPAN="2" VALIGN="MIDDLE"><I>P</I> = &nbsp;</TD>
-                <TD BOTTOMBORDER="1" ALIGN="CENTER"><I>d</I><SUB><FONT POINT-SIZE="10">1</FONT></SUB> · <I>d</I><SUB><FONT POINT-SIZE="10">2</FONT></SUB></TD>
-            </TR>
-            <TR>
-                <TD ALIGN="CENTER">2</TD>
+                <TD VALIGN="MIDDLE"><I>P</I> = &nbsp;</TD>
+                <TD>
+                    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1">
+                        <TR><TD ALIGN="CENTER"><I>d</I><SUB><FONT POINT-SIZE="10">1</FONT></SUB> · <I>d</I><SUB><FONT POINT-SIZE="10">2</FONT></SUB></TD></TR>
+                        <HR/>
+                        <TR><TD ALIGN="CENTER">2</TD></TR>
+                    </TABLE>
+                </TD>
             </TR>
         </TABLE>
     >, tooltip="Површина као код делтоида"];
     
+    // Формула са разломком и степенима: a^2 = (d1^2 + d2^2) / 4
     a2 [label=<
         <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
             <TR>
-                <TD ROWSPAN="2" VALIGN="MIDDLE"><I>a</I><SUP><FONT POINT-SIZE="10">2</FONT></SUP> = &nbsp;</TD>
-                <TD BOTTOMBORDER="1" ALIGN="CENTER"><I>d</I><SUB><FONT POINT-SIZE="10">1</FONT></SUB><SUP><FONT POINT-SIZE="10">2</FONT></SUP> + <I>d</I><SUB><FONT POINT-SIZE="10">2</FONT></SUB><SUP><FONT POINT-SIZE="10">2</FONT></SUP></TD>
-            </TR>
-            <TR>
-                <TD ALIGN="CENTER">4</TD>
+                <TD VALIGN="MIDDLE"><I>a</I><SUP><FONT POINT-SIZE="10">2</FONT></SUP> = &nbsp;</TD>
+                <TD>
+                    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1">
+                        <TR><TD ALIGN="CENTER"><I>d</I><SUB><FONT POINT-SIZE="10">1</FONT></SUB><SUP><FONT POINT-SIZE="10">2</FONT></SUP> + <I>d</I><SUB><FONT POINT-SIZE="10">2</FONT></SUB><SUP><FONT POINT-SIZE="10">2</FONT></SUP></TD></TR>
+                        <HR/>
+                        <TR><TD ALIGN="CENTER">4</TD></TR>
+                    </TABLE>
+                </TD>
             </TR>
         </TABLE>
     >, tooltip="Примена Питагорине теореме"];
     
+    // Формула: h = 2 * ru
     r0 [label=<<I>h</I> = 2<I>r</I><SUB><FONT POINT-SIZE="10"><I>u</I></FONT></SUB>>, tooltip="Висина је пречник"];
 
     a, h -> P0 -> P;
